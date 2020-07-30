@@ -212,6 +212,9 @@ rmdir [选项]... 目录...
 -u ：有效用户的相关进程
 -x ：一般与a参数一起使用，可列出较完整的信息
 -l ：较长，较详细地将PID的信息列出
+
+ps -ef 类似 ps -aux
+ps -ef|grep p
 ```
 
 
@@ -921,6 +924,8 @@ which 可执行文件名称
 
 ```
 grep [-acinv] [--color=auto] '查找字符串' filename
+
+grep -v "deviceType"  搜索没有deviceType的
 ```
 
 
