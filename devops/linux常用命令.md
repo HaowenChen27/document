@@ -56,5 +56,5 @@ ps -ef | grep jenkins-project | grep -v grep
 
 问题来了，如何取出pid   pid是第二个列
 
-awk  详情不说了
+awk  详情在awk学习 [awk学习.md](awk学习.md) 
 

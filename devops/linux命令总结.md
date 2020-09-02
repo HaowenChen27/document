@@ -214,7 +214,7 @@ rmdir [选项]... 目录...
 -l ：较长，较详细地将PID的信息列出
 
 ps -ef 类似 ps -aux
-ps -ef|grep p
+ps -ef|grep project
 ```
 
 
