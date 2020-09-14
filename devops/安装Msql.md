@@ -1,6 +1,6 @@
 linux下安装MYSQL
 
-```
+```java
 ### 检查是否安装过mysql
 rpm -qa | grep mysql
 
@@ -51,6 +51,8 @@ vim /etc/my.cnf
 service mysqld start      --启动mysql
 service mysqld stop       --关闭mysql·
 lsof -i:3306              --数据库端口是否开启
+### 没有初始化表执行
+mysql_install_db --user=mysql --basedir=/usr/ --ldata=/var/lib/mysql/
 ```
 
 
