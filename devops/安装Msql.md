@@ -39,11 +39,13 @@ yum install mysql-devel
 在/etc/my.cnf 文件中加入默认字符集
 
 vim /etc/my.cnf
+
+
 ```
 
 ![18](../img/18.png)
 
-
+<font color=red>修改为 default-character-set=utf8</font>
 
 启动或关闭mysql服务
 
@@ -68,6 +70,7 @@ chkconfig --add mysqld
 创建root管理员
 
 ```
+
 mysqladmin -u root password 123456
 ```
 
