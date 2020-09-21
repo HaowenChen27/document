@@ -68,7 +68,7 @@ chkconfig --add mysqld
 创建root管理员
 
 ```
-mysqladmin -u root password 密码
+mysqladmin -u root password 123456
 ```
 
 
@@ -123,3 +123,10 @@ systemctl start iptables.service        -- 开启服务
 mysql_install_db --user=mysql --datadir=/var/lib/mysql
 ```
 
+
+
+授权远程访问数据库
+
+进入mysql界面运行
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
