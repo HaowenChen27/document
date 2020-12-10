@@ -72,7 +72,7 @@ vim /etc/sysconfig/elasticsearch 中修改JAVA_HOME路径的路径
 
 vim /etc/elasticsearch/elasticsearch.yml
 
- 
+ 10.206.0.3
 
 修改yml配置的注意事项:
 
