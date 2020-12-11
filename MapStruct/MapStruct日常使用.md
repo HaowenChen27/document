@@ -208,3 +208,50 @@ EpProjectPlanDTO model2dto(EpProjectPlan plan);
 ### 坑点：强依赖lombok
 
 不仅需要使用，甚至不能随便重写get/set方法，如果getset入参和出参不一致会出现奇奇怪怪的问题
+
+
+
+坑点：lombok与mapstruct版本不兼容问题
+
+需要引入新的jar来做绑定
+
+```xml
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok-mapstruct-binding</artifactId>
+    <version>0.2.0</version>
+</dependency>
+```
+
+生成插件放到maven编译构建中
+
+```xml
+<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <target>${java.version}</target>
+                    <source>${java.version}</source>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>0.2.0</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+```
+
