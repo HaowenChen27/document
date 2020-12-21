@@ -58,3 +58,9 @@ ps -ef | grep jenkins-project | grep -v grep
 
 awk  详情在awk学习 [awk学习.md](awk学习.md) 
 
+
+
+用户名过长 查看所有用户名：
+
+ps -o ruser=userForLongName -e -o pid,ppid,c,stime,tty,time,cmd
+
